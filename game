@@ -1,0 +1,58 @@
+import pygame
+import numpy as np
+import random
+
+pygame.init()
+WIDTH,HEIGHT=800,800
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("FOX")
+font = pygame.font.Font(None, 36)
+
+def create_board(y=4):
+    board=np.empty((y, y), dtype=object)
+
+
+def create_titles(y=5):
+    l = []
+    for _ in range(y):
+        l.extend(['F', 'X', 'O'])
+    l.append('O')
+    random.shuffle(l)
+    return l
+
+def pick_title():
+    if check_titles()==True:
+        board[x][y]=l[0]
+        l.pop[0]
+    else:
+        pass
+
+def check_titles():
+    if board[x][y]=!'empty':
+        return True
+    else:
+        return False
+
+def click():
+    for x in range(z):
+        for y in range(z):
+
+
+def game():
+    while len(l)=!0:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                exit()
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            pos_x, pos_y = event.pos
+            clicked_col = x // rozmiar_komorki
+            clicked_row = (y // rozmiar_komorki) - 1
+            print(clicked_col, clicked_row)
+
+            sprawdzenieplan(clicked_row, clicked_col)
+
+        rys_plan(poprzedni_row, poprzedni_col)
+        pygame.quit()
+
+
