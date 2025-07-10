@@ -1,15 +1,16 @@
-# 🦊 FOX Game
+# 🦊 FOX Game — Avoid the Word
 
-FOX Game is a simple grid-based game created using Python and Pygame. The core mechanic revolves around clicking squares to reveal random letters—specifically `'F'`, `'O'`, and `'X'`. The goal is to randomly fill the board with these letters and potentially form the word **FOX** across the board in a fun and engaging way.
+This is a minimalist game built with Python and Pygame where your objective is simple: **fill the board without accidentally forming the word "FOX"** in a row, column, or diagonal.
 
 ## 🎮 Game Concept
 
-- The game board is a 4x4 grid of clickable squares.
-- On each click, a random letter from a predefined pool (`'F'`, `'O'`, `'X'`) is displayed in the clicked square.
-- The pool is shuffled before the game starts and each letter appears a fixed number of times.
-- Once a square is clicked, it gets a letter and is no longer clickable.
-- There's no win/lose condition implemented yet; it's a visual game mechanic focused on interaction and random placement.
+- You are given a pool of **5 F's**, **6 O's**, and **5 X's** (total of 16 letters to fill the 4x4 board).
+- Clicking on a square places a random letter from this pool.
+- Once a square is filled, it can't be clicked again.
+- The pool is randomly shuffled each game.
+- There's **no undo**—so be careful!
+- Your challenge is to **avoid** creating the word **FOX** in any line (horizontal, vertical, or diagonal).
 
-This can serve as a foundation for a word or puzzle game, or as a learning tool for building Pygame-based applications.
+This game is perfect as a simple puzzle, logic challenge, or even as a learning project for those new to game development with Pygame.
 
 
