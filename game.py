@@ -7,18 +7,18 @@ class ClickableSquare(pygame.sprite.Sprite):
     def __init__(self, x, y, size, font, callback):
         super().__init__()
         self.image = pygame.Surface((size, size))
-        self.image.fill((255, 255, 255))  # Początkowy kolor kwadratu
-        pygame.draw.rect(self.image, (0, 0, 0), self.image.get_rect(), 1)  # Obrys
+        self.image.fill((255, 255, 255))  
+        pygame.draw.rect(self.image, (0, 0, 0), self.image.get_rect(), 1)  
         self.rect = self.image.get_rect(topleft=(x, y))
         self.callback = callback
         self.font = font
-        self.text = ""  # Początkowo kwadrat jest pusty
+        self.text = ""  
 
     def set_text(self, text):
         """Ustawia tekst w kwadracie."""
         self.text = text
-        self.image.fill((255, 255, 255))  # Resetuje kolor tła
-        pygame.draw.rect(self.image, (0, 0, 0), self.image.get_rect(), 1)  # Obrys
+        self.image.fill((255, 255, 255))  
+        pygame.draw.rect(self.image, (0, 0, 0), self.image.get_rect(), 1)  
         if text:
             text_surface = self.font.render(text, True, (0, 0, 0))
             text_rect = text_surface.get_rect(center=self.image.get_rect().center)
@@ -54,27 +54,27 @@ def create_board(board_size, square_size, font, callback):
 
 pygame.init()
 
-# Parametry ekranu
+
 WIDTH, HEIGHT = 800, 800
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("FOX Game")
 font = pygame.font.Font(None, 72)
 
-# Parametry planszy
+
 board_size = 4
 square_size = WIDTH // board_size
 
-# Lista tytułów (znaków), które będą używane w grze
+
 available_titles = ['F', 'X', 'O'] * 5
 available_titles.append('O')
 random.shuffle(available_titles)
 
-# Tworzenie planszy
+
 board = create_board(board_size, square_size, font, on_click)
 board_log=np.zeros((board_size, board_size), dtype=object)
 
 
-# Główna pętla gry
+
 running = True
 while running:
     events = pygame.event.get()
@@ -82,10 +82,10 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # Aktualizacja grupy sprite'ów
+    
     board.update(events)
 
-    # Rysowanie elementów
+  
     screen.fill((200, 200, 200))
     board.draw(screen)
 
